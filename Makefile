@@ -19,17 +19,17 @@ setup:
 build: build-web build-go
 
 build-go:
-	if ! pkg-config --cflags  -- opus opus opus opus opusfile opusfile; then
-		sudo apt-get update -qq;
-		sudo apt-get install --no-install-recommends -y libopus-dev;
+	if ! pkg-config --cflags  -- opus opus opus opus opusfile opusfile; then\
+		sudo apt-get update -qq;\
+		sudo apt-get install --no-install-recommends -y libopus-dev;\
 	fi
 
-	if ! pkg-config --cflags  -- x11 xext; then
-		sudo apt-get install --no-install-recommends -y libx11-dev libxext-dev;
+	if ! pkg-config --cflags  -- x11 xext; then\
+		sudo apt-get install --no-install-recommends -y libx11-dev libxext-dev;\
 	fi
 
-	if ! pkg-config --cflags  -- vpx; then
-		sudo apt-get install --no-install-recommends -y libvpx-dev;
+	if ! pkg-config --cflags  -- vpx; then\
+		sudo apt-get install --no-install-recommends -y libvpx-dev;\
 	fi
 
 	# ignore mmal, the hardware accelerated H264 encoder for raspberry pi.

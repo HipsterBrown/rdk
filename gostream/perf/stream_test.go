@@ -14,6 +14,7 @@ import (
 )
 
 func init() {
+	testing.Init()
 	_ = flag.Set("test.benchtime", "100x")
 }
 

@@ -19,7 +19,8 @@ setup:
 build: build-web build-go
 
 build-go:
-	go build ./...
+	# ignore mmal, the hardware accelerated H264 encoder for raspberry pi.
+	go list -f '{{.Dir}}' ./... | grep -v mmal | xargs go build
 
 GOOS ?= $(shell go env GOOS)
 GOARCH ?= $(shell go env GOARCH)

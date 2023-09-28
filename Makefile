@@ -21,6 +21,7 @@ build: build-web build-go
 build-go:
 	if ! pkg-config --cflags  -- opus opus opus opus opusfile opusfile; then\
 		sudo apt-get update -qq;\
+		sudo apt-get install -y apt-utils;\
 		sudo apt-get install --no-install-recommends -y libopus-dev;\
 	fi
 

@@ -53,7 +53,7 @@ func main() {
 	defer machine.Close(ctx)
 
 	// The builtin motion service plans and executes motion across the robot's frame system.
-	motionService, err := motion.FromRobot(machine, "builtin")
+	motionService, err := motion.FromProvider(machine, "builtin")
 	if err != nil {
 		logger.Fatal(err)
 	}
